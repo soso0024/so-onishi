@@ -6,6 +6,7 @@ interface Translation {
     contact: string;
   };
   hero: {
+    name: string;
     description: string;
   };
   about: {
@@ -73,6 +74,7 @@ export const translations: { [key: string]: Translation } = {
       contact: "Contact",
     },
     hero: {
+      name: "So Onishi",
       description:
         "I am a graduate student at Doshisha University and currently enrolled in a Double Degree Program with École Centrale de Nantes, where I am studying Advanced Robotics. I completed my undergraduate degree in Information Systems Design from the Faculty of Science and Engineering at Doshisha University.",
     },
@@ -170,6 +172,7 @@ export const translations: { [key: string]: Translation } = {
       contact: "連絡先",
     },
     hero: {
+      name: "大西 創",
       description:
         "現在，同志社大学の大学院生です。エコールサントラル・ナント校とのダブルディグリープログラムでロボット工学の修士号を取得しました。同志社大学理工学部情報システムデザイン学科を卒業しました。",
     },
