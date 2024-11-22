@@ -19,6 +19,10 @@ interface Translation {
   };
   news: {
     title: string;
+    items: {
+      date: string;
+      description: string;
+    }[];
   };
   projects: {
     title: string;
@@ -85,6 +89,38 @@ export const translations: { [key: string]: Translation } = {
     },
     news: {
       title: "News",
+      items: [
+        {
+          date: "July 31, 2024",
+          description:
+            "Graduated from École Centrale de Nantes with Masters in Advanced Robotics 🦾",
+        },
+        {
+          date: "April 2, 2024",
+          description:
+            "Started a Masters in Computer Science at Doshisha University ❤️‍🔥",
+        },
+        {
+          date: "March 31, 2024",
+          description:
+            "Graduated from Doshisha University with BSc in Computer Science 🧑‍💻",
+        },
+        {
+          date: "March 31, 2024",
+          description:
+            "Got the outstanding student award for information technology from Doshisha University 🏆",
+        },
+        {
+          date: "Sep 1, 2023",
+          description:
+            "Started a Masters in Advanced Robotics at Centrale Nantes 🤖",
+        },
+        {
+          date: "April 2, 2020",
+          description:
+            "Started a BSc in Computer Science at Doshisha University 🔥",
+        },
+      ],
     },
     projects: {
       title: "Projects",
@@ -149,6 +185,34 @@ export const translations: { [key: string]: Translation } = {
     },
     news: {
       title: "ニュース",
+      items: [
+        {
+          date: "2024年7月31日",
+          description:
+            "エコールサントラル・ナント校で先端ロボット工学の修士号を取得 🦾",
+        },
+        {
+          date: "2024年4月2日",
+          description: "同志社大学でコンピュータサイエンスの修士課程を開始 ❤️‍🔥",
+        },
+        {
+          date: "2024年3月31日",
+          description: "同志社大学でコンピュータサイエンスの学士号を取得 🧑‍💻",
+        },
+        {
+          date: "2024年3月31日",
+          description: "同志社大学から情報技術の優秀学生賞を受賞 🏆",
+        },
+        {
+          date: "2023年9月1日",
+          description:
+            "エコールサントラル・ナント校で先端ロボット工学の修士課程を開始 🤖",
+        },
+        {
+          date: "2020年4月2日",
+          description: "同志社大学でコンピュータサイエンスの学士課程を開始 🔥",
+        },
+      ],
     },
     projects: {
       title: "プロジェクト",
