@@ -47,10 +47,9 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
       <div class="bg-white rounded-lg shadow p-6">
         <p class="text-gray-700 mb-4" data-i18n="about.passion"></p>
         <div class="mb-6">
-          <h3 class="font-semibold mb-2" data-i18n="about.experience.title"></h3>
-          <div class="border-l-2 border-primary pl-4">
-            <h4 class="font-medium" data-i18n="about.experience.role"></h4>
-            <p class="text-gray-600" data-i18n="about.experience.description"></p>
+          <h3 class="font-semibold mb-4" data-i18n="about.experience.title"></h3>
+          <div class="space-y-6" id="experience-list">
+            <!-- Experience items will be populated by JavaScript -->
           </div>
         </div>
       </div>
@@ -147,6 +146,25 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
       return path.split('.').reduce((current, key) => current?.[key], obj) as string;
     }
 
+    function updateExperienceSection(lang: string) {
+      const experienceListElement = document.getElementById('experience-list');
+      if (!experienceListElement) return;
+
+      const experienceItems = translations[lang].about.experience.items;
+      experienceListElement.innerHTML = experienceItems.map(item => `
+        <div class="border-l-2 border-primary pl-4">
+          <div class="flex justify-between items-start mb-1">
+            <div>
+              <h4 class="font-medium">${item.role}</h4>
+              <p class="text-gray-600">${item.company}</p>
+            </div>
+            <span class="text-sm text-gray-500">${item.period}</span>
+          </div>
+          <p class="text-gray-600">${item.description}</p>
+        </div>
+      `).join('');
+    }
+
     function updateNewsSection(lang: string) {
       const newsListElement = document.getElementById('news-list');
       if (!newsListElement) return;
@@ -175,7 +193,8 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
         }
       });
 
-      // Update news section separately since it requires special handling
+      // Update experience and news sections separately since they require special handling
+      updateExperienceSection(lang);
       updateNewsSection(lang);
     }
 
