@@ -17,13 +17,58 @@ const currentLang = 'en'; // Default to English in the template
     <title>{title}</title>
   </head>
   <body class="bg-gray-50">
-    <nav class="bg-white shadow-sm">
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex items-center">
-            <a href="/" class="text-xl font-bold text-gray-900">🤖 🏀 🍖</a>
+            <!-- <a href="/" class="text-xl font-bold text-gray-900">🤖 🏀 🍖</a> -->
           </div>
-          <div class="flex items-center space-x-4">
+          <!-- Mobile menu button -->
+          <button
+            type="button"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
+            id="mobile-menu-button"
+          >
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger icon -->
+            <svg
+              class="block h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+              id="hamburger-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+            <!-- Close icon -->
+            <svg
+              class="hidden h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+              id="close-icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <!-- Desktop menu -->
+          <div class="hidden md:flex items-center space-x-4">
             <a href="#about" class="text-gray-700 hover:text-primary" data-nav-about>About</a>
             <a href="#projects" class="text-gray-700 hover:text-primary" data-nav-projects>Projects</a>
             <a href="#skills" class="text-gray-700 hover:text-primary" data-nav-skills>Skills</a>
@@ -37,11 +82,54 @@ const currentLang = 'en'; // Default to English in the template
           </div>
         </div>
       </div>
+
+      <!-- Mobile menu -->
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
+          <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-about-mobile>About</a>
+          <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-projects-mobile>Projects</a>
+          <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-skills-mobile>Skills</a>
+          <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-contact-mobile>Contact</a>
+          <button
+            id="langToggleMobile"
+            class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100"
+          >
+            日本語 🇯🇵
+          </button>
+        </div>
+      </div>
     </nav>
-    <slot />
+    <!-- Add padding to account for fixed header -->
+    <div class="pt-16">
+      <slot />
+    </div>
 
     <script>
       let currentLang = localStorage.getItem('lang') || 'en';
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      // Mobile menu toggle
+      mobileMenuButton.addEventListener('click', () => {
+        const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        mobileMenuButton.setAttribute('aria-expanded', String(!isExpanded));
+        mobileMenu.classList.toggle('hidden');
+        hamburgerIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+
+      // Close mobile menu when clicking on a link
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+        });
+      });
 
       function updateLanguage() {
         const translations = {
@@ -59,14 +147,22 @@ const currentLang = 'en'; // Default to English in the template
           }
         };
 
-        // Update navigation text
+        // Update desktop navigation text
         document.querySelector('[data-nav-about]').textContent = translations[currentLang].about;
         document.querySelector('[data-nav-projects]').textContent = translations[currentLang].projects;
         document.querySelector('[data-nav-skills]').textContent = translations[currentLang].skills;
         document.querySelector('[data-nav-contact]').textContent = translations[currentLang].contact;
 
-        // Update language toggle button text
-        document.getElementById('langToggle').textContent = currentLang === 'en' ? '日本語 🇯🇵' : 'English 🇺🇸';
+        // Update mobile navigation text
+        document.querySelector('[data-nav-about-mobile]').textContent = translations[currentLang].about;
+        document.querySelector('[data-nav-projects-mobile]').textContent = translations[currentLang].projects;
+        document.querySelector('[data-nav-skills-mobile]').textContent = translations[currentLang].skills;
+        document.querySelector('[data-nav-contact-mobile]').textContent = translations[currentLang].contact;
+
+        // Update language toggle buttons text
+        const langText = currentLang === 'en' ? '日本語 🇯🇵' : 'English 🇺🇸';
+        document.getElementById('langToggle').textContent = langText;
+        document.getElementById('langToggleMobile').textContent = langText;
 
         // Dispatch custom event for page content update
         document.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: currentLang } }));
@@ -75,12 +171,15 @@ const currentLang = 'en'; // Default to English in the template
       // Initialize language
       updateLanguage();
 
-      // Add click handler to language toggle button
-      document.getElementById('langToggle').addEventListener('click', () => {
+      // Add click handler to language toggle buttons
+      const toggleLanguage = () => {
         currentLang = currentLang === 'en' ? 'ja' : 'en';
         localStorage.setItem('lang', currentLang);
         updateLanguage();
-      });
+      };
+
+      document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+      document.getElementById('langToggleMobile').addEventListener('click', toggleLanguage);
     </script>
   </body>
 </html>
