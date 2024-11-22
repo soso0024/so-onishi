@@ -69,15 +69,18 @@ export const translations: { [key: string]: Translation } = {
       contact: "Contact",
     },
     hero: {
-      description: "I am a graduate student at Doshisha University and currently enrolled in a Double Degree Program with École Centrale de Nantes, where I am studying Advanced Robotics. I completed my undergraduate degree in Information Systems Design from the Faculty of Science and Engineering at Doshisha University.",
+      description:
+        "I am a graduate student at Doshisha University and currently enrolled in a Double Degree Program with École Centrale de Nantes, where I am studying Advanced Robotics. I completed my undergraduate degree in Information Systems Design from the Faculty of Science and Engineering at Doshisha University.",
     },
     about: {
       title: "About Me",
-      passion: "I'm passionate about AI and technology, with a focus on solving real-world problems through programming.",
+      passion:
+        "I'm passionate about AI and technology, with a focus on solving real-world problems through programming.",
       experience: {
         title: "Experience",
         role: "Backend Engineer - Mynavi Corporation",
-        description: "Implemented Bookmark-related API functionality during a hackathon",
+        description:
+          "Implemented Bookmark-related API functionality during a hackathon",
       },
     },
     news: {
@@ -87,7 +90,8 @@ export const translations: { [key: string]: Translation } = {
       title: "Projects",
       transcription: {
         title: "Transcription",
-        description: "Audio file transcription service created to help with French listening assignments",
+        description:
+          "Audio file transcription service created to help with French listening assignments",
         viewOnGithub: "View on GitHub →",
       },
     },
@@ -130,11 +134,13 @@ export const translations: { [key: string]: Translation } = {
       contact: "連絡先",
     },
     hero: {
-      description: "同志社大学の大学院生で、現在エコールサントラル・ナント校とのダブルディグリープログラムで先端ロボット工学を学んでいます。同志社大学理工学部情報システムデザイン学科を卒業しました。",
+      description:
+        "同志社大学の大学院生で、現在エコールサントラル・ナント校とのダブルディグリープログラムで先端ロボット工学を学んでいます。同志社大学理工学部情報システムデザイン学科を卒業しました。",
     },
     about: {
       title: "自己紹介",
-      passion: "AIとテクノロジーに情熱を持ち、プログラミングを通じて実世界の問題解決に取り組んでいます。",
+      passion:
+        "AIとテクノロジーに情熱を持ち、プログラミングを通じて実世界の問題解決に取り組んでいます。",
       experience: {
         title: "経験",
         role: "バックエンドエンジニア - マイナビ株式会社",
@@ -148,7 +154,8 @@ export const translations: { [key: string]: Translation } = {
       title: "プロジェクト",
       transcription: {
         title: "文字起こし",
-        description: "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
+        description:
+          "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
         viewOnGithub: "GitHubで見る →",
       },
     },

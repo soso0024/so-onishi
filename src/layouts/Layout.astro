@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const currentLang = 'en'; // Default to English in the template
 ---
 
 <!doctype html>
@@ -29,9 +30,9 @@ const { title } = Astro.props;
             <a href="#contact" class="text-gray-700 hover:text-primary" data-nav-contact>Contact</a>
             <button
               id="langToggle"
-              class="px-3 py-1 rounded-md bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors"
+              class="px-4 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md transition-colors"
             >
-              EN/JP
+              日本語 🇯🇵
             </button>
           </div>
         </div>
@@ -63,6 +64,9 @@ const { title } = Astro.props;
         document.querySelector('[data-nav-projects]').textContent = translations[currentLang].projects;
         document.querySelector('[data-nav-skills]').textContent = translations[currentLang].skills;
         document.querySelector('[data-nav-contact]').textContent = translations[currentLang].contact;
+
+        // Update language toggle button text
+        document.getElementById('langToggle').textContent = currentLang === 'en' ? '日本語 🇯🇵' : 'English 🇺🇸';
 
         // Dispatch custom event for page content update
         document.dispatchEvent(new CustomEvent('languageChange', { detail: { lang: currentLang } }));
