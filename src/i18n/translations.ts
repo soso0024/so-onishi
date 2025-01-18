@@ -278,7 +278,7 @@ export const translations: { [key: string]: Translation } = {
       ],
     },
     projects: {
-      title: "プロジェクト",
+      title: "プロジェクトあいう",
       transcription: {
         title: "文字起こし",
         description:
