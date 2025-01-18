@@ -280,7 +280,7 @@ export const translations: { [key: string]: Translation } = {
     projects: {
       title: "プロジェクト",
       transcription: {
-        title: "あいうえお",
+        title: "文字起こし",
         description:
           "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
         viewOnGithub: "GitHubで見る →",
