@@ -36,6 +36,16 @@ interface Translation {
       description: string;
       viewOnGithub: string;
     };
+    fileManagement: {
+      title: string;
+      description: string;
+      viewOnGithub: string;
+    };
+    timeManagement: {
+      title: string;
+      description: string;
+      viewOnGithub: string;
+    };
   };
   skills: {
     title: string;
@@ -163,6 +173,18 @@ export const translations: { [key: string]: Translation } = {
           "Audio file transcription service created to help with French listening assignments",
         viewOnGithub: "View on GitHub →",
       },
+      fileManagement: {
+        title: "File Management",
+        description:
+          "This is a simple file management system that allows you to split downloaded files into folders based on their file extension.",
+        viewOnGithub: "View on GitHub →",
+      },
+      timeManagement: {
+        title: "Time Management",
+        description:
+          "This is a simple time management system that allows you to track the time you spend on different tasks. And it also allows you to set a plan by using API of google calender. By using sqlite3, it can store the data of time you spend on different tasks.",
+        viewOnGithub: "View on GitHub →",
+      },
     },
     skills: {
       title: "Skills",
@@ -283,6 +305,18 @@ export const translations: { [key: string]: Translation } = {
         title: "文字起こし",
         description:
           "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
+        viewOnGithub: "GitHubで見る →",
+      },
+      fileManagement: {
+        title: "ファイル管理",
+        description:
+          "ダウンロードしたファイルを拡張子に基づいてフォルダに分割することができるシンプルなファイル管理システムです。",
+        viewOnGithub: "GitHubで見る →",
+      },
+      timeManagement: {
+        title: "時間管理",
+        description:
+          "さまざまなタスクに費やした時間を追跡できるシンプルな時間管理システムです。また、GoogleカレンダーのAPIを使用して計画を設定することもできます。sqlite3を使用することで、さまざまなタスクに費やした時間のデータを保存できます。",
         viewOnGithub: "GitHubで見る →",
       },
     },
