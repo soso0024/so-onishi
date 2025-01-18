@@ -278,9 +278,9 @@ export const translations: { [key: string]: Translation } = {
       ],
     },
     projects: {
-      title: "プロジェクトあいう",
+      title: "プロジェクト",
       transcription: {
-        title: "文字起こし",
+        title: "あいうえお",
         description:
           "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
         viewOnGithub: "GitHubで見る →",
