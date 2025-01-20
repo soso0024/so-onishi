@@ -53,6 +53,18 @@ interface Translation {
       title: string;
       skills: string[];
     };
+    frontend: {
+      title: string;
+      skills: string[];
+    };
+    database: {
+      title: string;
+      skills: string[];
+    };
+    robotics: {
+      title: string;
+      skills: string[];
+    };
     tools: {
       title: string;
       skills: string[];
@@ -201,15 +213,27 @@ export const translations: { [key: string]: Translation } = {
       title: "Skills",
       backend: {
         title: "Backend",
-        skills: ["Python", "API Development", "Database Design"],
+        skills: ["Python", "Django", "Flask"],
+      },
+      frontend: {
+        title: "Frontend",
+        skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "React"],
+      },
+      database: {
+        title: "Database",
+        skills: ["SQLite", "Supabase"],
+      },
+      robotics: {
+        title: "Robotics",
+        skills: ["C", "C++", "ROS2"],
       },
       tools: {
         title: "Tools",
-        skills: ["Git", "GitHub", "VS Code"],
+        skills: ["Git", "GitHub", "VS Code", "Cursor"],
       },
       cloud: {
         title: "Cloud",
-        skills: ["AWS", "Cloud Infrastructure"],
+        skills: ["AWS", "GCP", "Terraform", "LocalStack"],
       },
     },
     contact: {
@@ -346,15 +370,27 @@ export const translations: { [key: string]: Translation } = {
       title: "スキル",
       backend: {
         title: "バックエンド",
-        skills: ["Python", "API開発", "データベース設計"],
+        skills: ["Python", "Django", "Flask"],
+      },
+      frontend: {
+        title: "フロントエンド",
+        skills: ["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "React"],
+      },
+      database: {
+        title: "データベース",
+        skills: ["SQLite", "Supabase"],
+      },
+      robotics: {
+        title: "ロボティクス",
+        skills: ["C", "C++", "ROS2"],
       },
       tools: {
         title: "ツール",
-        skills: ["Git", "GitHub", "VS Code"],
+        skills: ["Git", "GitHub", "VS Code", "Cursor"],
       },
       cloud: {
         title: "クラウド",
-        skills: ["AWS", "クラウドインフラ"],
+        skills: ["AWS", "GCP", "Terraform", "LocalStack"],
       },
     },
     contact: {
