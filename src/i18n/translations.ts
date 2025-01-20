@@ -95,7 +95,7 @@ export const translations: { [key: string]: Translation } = {
     about: {
       title: "About Me",
       passion:
-        "I'm passionate about AI and technology, with a focus on solving real-world problems through programming.",
+        "I'm fascinated by the idea of ​​using the power of technology to make people happy and working together as a team to achieve goals 🫶",
       experience: {
         title: "Experience",
         items: [
@@ -243,7 +243,7 @@ export const translations: { [key: string]: Translation } = {
     about: {
       title: "自己紹介",
       passion:
-        "AIとテクノロジーに情熱を持ち、プログラミングを通じて実世界の問題解決に取り組んでいます。",
+        "テクノロジーの力を使って周りをハッピーにすること，チームで協力して目標を達成することに魅力を感じます 🫶",
       experience: {
         title: "経験",
         items: [
