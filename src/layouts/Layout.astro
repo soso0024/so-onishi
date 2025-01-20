@@ -15,17 +15,17 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/muscle-svgrepo-com.svg" />
     <title>{title}</title>
   </head>
-  <body class="bg-gray-50">
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+  <body class="bg-gray-50 dark:bg-gray-900">
+    <nav class="bg-white dark:bg-gray-800 shadow-sm fixed w-full top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
           <div class="flex items-center">
-            <!-- <a href="/" class="text-xl font-bold text-gray-900">🤖 🏀 🍖</a> -->
+            <!-- <a href="/" class="text-xl font-bold text-gray-900 dark:text-white">🤖 🏀 🍖</a> -->
           </div>
           <!-- Mobile menu button -->
           <button
             type="button"
-            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
             aria-controls="mobile-menu"
             aria-expanded="false"
             id="mobile-menu-button"
@@ -68,16 +68,27 @@ const { title } = Astro.props;
           </button>
           <!-- Desktop menu -->
           <div class="hidden md:flex items-center space-x-4">
-            <a href="#about" class="text-gray-700 hover:text-primary" data-nav-about>About</a>
-            <a href="#news" class="text-gray-700 hover:text-primary" data-nav-news>News</a>
-            <a href="#projects" class="text-gray-700 hover:text-primary" data-nav-projects>Projects</a>
-            <a href="#skills" class="text-gray-700 hover:text-primary" data-nav-skills>Skills</a>
-            <a href="#contact" class="text-gray-700 hover:text-primary" data-nav-contact>Contact</a>
+            <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary" data-nav-about>About</a>
+            <a href="#news" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary" data-nav-news>News</a>
+            <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary" data-nav-projects>Projects</a>
+            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary" data-nav-skills>Skills</a>
+            <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary" data-nav-contact>Contact</a>
             <button
               id="langToggle"
-              class="px-4 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md transition-colors"
+              class="px-4 py-1 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-md transition-colors"
             >
               日本語 🇯🇵
+            </button>
+            <button
+              id="darkModeToggle"
+              class="p-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-md transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a8 8 0 1 0 8 8 8 8 0 0 0-8-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"/>
+              </svg>
             </button>
           </div>
         </div>
@@ -85,15 +96,15 @@ const { title } = Astro.props;
 
       <!-- Mobile menu -->
       <div class="hidden md:hidden" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
-          <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-about-mobile>About</a>
-          <a href="#news" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-news-mobile>News</a>
-          <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-projects-mobile>Projects</a>
-          <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-skills-mobile>Skills</a>
-          <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100" data-nav-contact-mobile>Contact</a>
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-800">
+          <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" data-nav-about-mobile>About</a>
+          <a href="#news" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" data-nav-news-mobile>News</a>
+          <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" data-nav-projects-mobile>Projects</a>
+          <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" data-nav-skills-mobile>Skills</a>
+          <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary hover:bg-gray-100 dark:hover:bg-gray-700" data-nav-contact-mobile>Contact</a>
           <button
             id="langToggleMobile"
-            class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100"
+            class="w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary dark:hover:bg-gray-700"
           >
             日本語 🇯🇵
           </button>
@@ -185,6 +196,23 @@ const { title } = Astro.props;
 
       document.getElementById('langToggle').addEventListener('click', toggleLanguage);
       document.getElementById('langToggleMobile').addEventListener('click', toggleLanguage);
+
+      // Dark mode toggle functionality
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      const html = document.documentElement;
+
+      function toggleDarkMode() {
+        html.classList.toggle('dark');
+        localStorage.setItem('darkMode', html.classList.contains('dark') ? 'enabled' : 'disabled');
+      }
+
+      // Check for saved dark mode preference or use system preference
+      if (localStorage.getItem('darkMode') === 'enabled' ||
+          (!('darkMode' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+      }
+
+      darkModeToggle.addEventListener('click', toggleDarkMode);
     </script>
   </body>
 </html>
