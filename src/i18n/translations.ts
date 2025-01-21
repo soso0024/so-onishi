@@ -194,13 +194,6 @@ export const translations: { [key: string]: Translation } = {
       viewOnGithub: "GitHub",
       items: [
         {
-          title: "Transcription",
-          description:
-            "Audio file transcription service created to help with French listening assignments",
-          github:
-            "https://github.com/soso0024/python-projects/tree/main/transcription",
-        },
-        {
           title: "File Management",
           description:
             "This is a simple file management system that allows you to split downloaded files into folders based on their file extension.",
@@ -213,6 +206,13 @@ export const translations: { [key: string]: Translation } = {
             "This is a simple time management system that allows you to track the time you spend on different tasks. And it also allows you to set a plan by using API of google calender. By using sqlite3, it can store the data of time you spend on different tasks.",
           github:
             "https://github.com/soso0024/python-projects/tree/main/time-manage",
+        },
+        {
+          title: "Transcription",
+          description:
+            "Audio file transcription service created to help with French listening assignments",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/transcription",
         },
       ],
     },
@@ -387,13 +387,6 @@ export const translations: { [key: string]: Translation } = {
       viewOnGithub: "GitHub",
       items: [
         {
-          title: "文字起こし",
-          description:
-            "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
-          github:
-            "https://github.com/soso0024/python-projects/tree/main/transcription",
-        },
-        {
           title: "ファイル管理",
           description:
             "ダウンロードしたファイルを拡張子に基づいてフォルダに分割することができるシンプルなファイル管理システムです。",
@@ -406,6 +399,13 @@ export const translations: { [key: string]: Translation } = {
             "さまざまなタスクに費やした時間を追跡できるシンプルな時間管理システムです。また、GoogleカレンダーのAPIを使用して計画を設定することもできます。sqlite3を使用することで、さまざまなタスクに費やした時間のデータを保存できます。",
           github:
             "https://github.com/soso0024/python-projects/tree/main/time-manage",
+        },
+        {
+          title: "文字起こし",
+          description:
+            "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/transcription",
         },
       ],
     },
