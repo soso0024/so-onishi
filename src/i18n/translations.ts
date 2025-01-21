@@ -444,22 +444,22 @@ export const translations: { [key: string]: Translation } = {
       title: "研究テーマ",
       items: [
         {
-          title: "人間とロボットのインタラクション",
+          title: "コード生成AIのテストにおけるコサイン類似度の活用",
           description:
             "自然言語処理とジェスチャー認識を通じて、人間とロボットの相互作用を改善する研究を行っています。",
-          period: "2024年 - 現在",
+          period: "2024年10月 - 現在",
         },
         {
-          title: "自律航法",
+          title: "Turtlebot3 を用いたロボティクス研究室のマッピング",
           description:
-            "ROS2とディープラーニングを使用して、動的環境下でのロボットの自律航法のためのアルゴリズムを開発しています。",
-          period: "2023年 - 現在",
+            "SLAM 技術と Turtlebot3 を活用し、研究室のマッピングを実装",
+          period: "2024年1月 - 2024年7月",
         },
         {
-          title: "Human-Robot Interaction",
+          title: "ビデオエンコードにおける Amazon EC2 の性能と費用対効果の評価",
           description:
-            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
-          period: "2024 - Present",
+            "スポットインスタンスを用いたビデオエンコードが、異なるリージョンでも性能を維持したまま費用削減を実現できるか検証",
+          period: "2023年5月 - 2024年3月",
         },
       ],
     },
