@@ -261,25 +261,26 @@ export const translations: { [key: string]: Translation } = {
       },
     },
     research: {
-      title: "Research Topics",
+      title: "Research",
       items: [
         {
-          title: "Human-Robot Interaction",
+          title: "Utilizing Cosine Similarity in Testing Code Generation AI",
           description:
-            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
-          period: "2024 - Present",
+            "Conducting research to improve human-robot interaction through natural language processing and gesture recognition.",
+          period: "October 2024 - Present",
         },
         {
-          title: "Autonomous Navigation",
+          title: "Mapping of Robotics Laboratory using Turtlebot3",
           description:
-            "Developing algorithms for autonomous robot navigation in dynamic environments using ROS2 and deep learning.",
-          period: "2023 - Present",
+            "Implementing laboratory mapping using SLAM technology and Turtlebot3",
+          period: "January 2024 - July 2024",
         },
         {
-          title: "Human-Robot Interaction",
+          title:
+            "Evaluating Performance and Cost-effectiveness of Amazon EC2 in Video Encoding",
           description:
-            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
-          period: "2024 - Present",
+            "Verifying if video encoding using spot instances can maintain performance while reducing costs across different regions",
+          period: "May 2023 - March 2024",
         },
       ],
     },
@@ -441,13 +442,14 @@ export const translations: { [key: string]: Translation } = {
       },
     },
     research: {
-      title: "研究テーマ",
+      title: "研究",
       items: [
         {
           title: "コード生成AIのテストにおけるコサイン類似度の活用",
           description:
             "自然言語処理とジェスチャー認識を通じて、人間とロボットの相互作用を改善する研究を行っています。",
           period: "2024年10月 - 現在",
+          github: "https://github.com/soso0024/pj-aidev-research-mockup",
         },
         {
           title: "Turtlebot3 を用いたロボティクス研究室のマッピング",
