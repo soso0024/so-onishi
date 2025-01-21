@@ -12,6 +12,7 @@ interface Translation {
       description: string;
       period: string;
       github?: string;
+      conference?: string;
     }[];
   };
   hero: {
@@ -203,19 +204,19 @@ export const translations: { [key: string]: Translation } = {
         title: "Transcription",
         description:
           "Audio file transcription service created to help with French listening assignments",
-        viewOnGithub: "View on GitHub →",
+        viewOnGithub: "GitHub",
       },
       fileManagement: {
         title: "File Management",
         description:
           "This is a simple file management system that allows you to split downloaded files into folders based on their file extension.",
-        viewOnGithub: "View on GitHub →",
+        viewOnGithub: "GitHub",
       },
       timeManagement: {
         title: "Time Management",
         description:
           "This is a simple time management system that allows you to track the time you spend on different tasks. And it also allows you to set a plan by using API of google calender. By using sqlite3, it can store the data of time you spend on different tasks.",
-        viewOnGithub: "View on GitHub →",
+        viewOnGithub: "GitHub",
       },
     },
     skills: {
@@ -274,6 +275,7 @@ export const translations: { [key: string]: Translation } = {
           description:
             "Implementing laboratory mapping using SLAM technology and Turtlebot3",
           period: "January 2024 - July 2024",
+          conference: "https://example.com/robotics-conference-2024",
         },
         {
           title:
@@ -384,19 +386,19 @@ export const translations: { [key: string]: Translation } = {
         title: "文字起こし",
         description:
           "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
-        viewOnGithub: "GitHubで見る →",
+        viewOnGithub: "GitHub",
       },
       fileManagement: {
         title: "ファイル管理",
         description:
           "ダウンロードしたファイルを拡張子に基づいてフォルダに分割することができるシンプルなファイル管理システムです。",
-        viewOnGithub: "GitHubで見る →",
+        viewOnGithub: "GitHub",
       },
       timeManagement: {
         title: "時間管理",
         description:
           "さまざまなタスクに費やした時間を追跡できるシンプルな時間管理システムです。また、GoogleカレンダーのAPIを使用して計画を設定することもできます。sqlite3を使用することで、さまざまなタスクに費やした時間のデータを保存できます。",
-        viewOnGithub: "GitHubで見る →",
+        viewOnGithub: "GitHub",
       },
     },
     skills: {
@@ -456,6 +458,7 @@ export const translations: { [key: string]: Translation } = {
           description:
             "SLAM 技術と Turtlebot3 を活用し、研究室のマッピングを実装",
           period: "2024年1月 - 2024年7月",
+          conference: "https://example.com/robotics-conference-2024",
         },
         {
           title: "ビデオエンコードにおける Amazon EC2 の性能と費用対効果の評価",
