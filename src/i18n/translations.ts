@@ -191,7 +191,7 @@ export const translations: { [key: string]: Translation } = {
     },
     projects: {
       title: "Projects",
-      viewOnGithub: "View on GitHub",
+      viewOnGithub: "GitHub",
       items: [
         {
           title: "Transcription",
