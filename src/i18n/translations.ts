@@ -5,6 +5,15 @@ interface Translation {
     skills: string;
     contact: string;
   };
+  research: {
+    title: string;
+    items: {
+      title: string;
+      description: string;
+      period: string;
+      github?: string;
+    }[];
+  };
   hero: {
     name: string;
     description: string;
@@ -251,6 +260,29 @@ export const translations: { [key: string]: Translation } = {
         description: "Connect with me",
       },
     },
+    research: {
+      title: "Research Topics",
+      items: [
+        {
+          title: "Human-Robot Interaction",
+          description:
+            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
+          period: "2024 - Present",
+        },
+        {
+          title: "Autonomous Navigation",
+          description:
+            "Developing algorithms for autonomous robot navigation in dynamic environments using ROS2 and deep learning.",
+          period: "2023 - Present",
+        },
+        {
+          title: "Human-Robot Interaction",
+          description:
+            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
+          period: "2024 - Present",
+        },
+      ],
+    },
   },
   ja: {
     nav: {
@@ -407,6 +439,29 @@ export const translations: { [key: string]: Translation } = {
         title: "LinkedIn",
         description: "つながる",
       },
+    },
+    research: {
+      title: "研究テーマ",
+      items: [
+        {
+          title: "人間とロボットのインタラクション",
+          description:
+            "自然言語処理とジェスチャー認識を通じて、人間とロボットの相互作用を改善する研究を行っています。",
+          period: "2024年 - 現在",
+        },
+        {
+          title: "自律航法",
+          description:
+            "ROS2とディープラーニングを使用して、動的環境下でのロボットの自律航法のためのアルゴリズムを開発しています。",
+          period: "2023年 - 現在",
+        },
+        {
+          title: "Human-Robot Interaction",
+          description:
+            "Researching ways to improve interaction between humans and robots through natural language processing and gesture recognition.",
+          period: "2024 - Present",
+        },
+      ],
     },
   },
 };
