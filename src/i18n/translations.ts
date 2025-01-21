@@ -41,21 +41,12 @@ interface Translation {
   };
   projects: {
     title: string;
-    transcription: {
+    viewOnGithub: string;
+    items: {
       title: string;
       description: string;
-      viewOnGithub: string;
-    };
-    fileManagement: {
-      title: string;
-      description: string;
-      viewOnGithub: string;
-    };
-    timeManagement: {
-      title: string;
-      description: string;
-      viewOnGithub: string;
-    };
+      github: string;
+    }[];
   };
   skills: {
     title: string;
@@ -200,24 +191,30 @@ export const translations: { [key: string]: Translation } = {
     },
     projects: {
       title: "Projects",
-      transcription: {
-        title: "Transcription",
-        description:
-          "Audio file transcription service created to help with French listening assignments",
-        viewOnGithub: "GitHub",
-      },
-      fileManagement: {
-        title: "File Management",
-        description:
-          "This is a simple file management system that allows you to split downloaded files into folders based on their file extension.",
-        viewOnGithub: "GitHub",
-      },
-      timeManagement: {
-        title: "Time Management",
-        description:
-          "This is a simple time management system that allows you to track the time you spend on different tasks. And it also allows you to set a plan by using API of google calender. By using sqlite3, it can store the data of time you spend on different tasks.",
-        viewOnGithub: "GitHub",
-      },
+      viewOnGithub: "View on GitHub",
+      items: [
+        {
+          title: "Transcription",
+          description:
+            "Audio file transcription service created to help with French listening assignments",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/transcription",
+        },
+        {
+          title: "File Management",
+          description:
+            "This is a simple file management system that allows you to split downloaded files into folders based on their file extension.",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/file-manage",
+        },
+        {
+          title: "Time Management",
+          description:
+            "This is a simple time management system that allows you to track the time you spend on different tasks. And it also allows you to set a plan by using API of google calender. By using sqlite3, it can store the data of time you spend on different tasks.",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/time-manage",
+        },
+      ],
     },
     skills: {
       title: "Skills",
@@ -267,7 +264,7 @@ export const translations: { [key: string]: Translation } = {
         {
           title: "Utilizing Cosine Similarity in Testing Code Generation AI",
           description:
-            "Conducting research to improve human-robot interaction through natural language processing and gesture recognition.",
+            "Verify the performance of the generated AI code using test cases obtained using cosine similarity before the user uses it",
           period: "October 2024 - Present",
           github: "https://github.com/soso0024/pj-aidev-research-mockup",
         },
@@ -387,24 +384,30 @@ export const translations: { [key: string]: Translation } = {
     },
     projects: {
       title: "プロジェクト",
-      transcription: {
-        title: "文字起こし",
-        description:
-          "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
-        viewOnGithub: "GitHub",
-      },
-      fileManagement: {
-        title: "ファイル管理",
-        description:
-          "ダウンロードしたファイルを拡張子に基づいてフォルダに分割することができるシンプルなファイル管理システムです。",
-        viewOnGithub: "GitHub",
-      },
-      timeManagement: {
-        title: "時間管理",
-        description:
-          "さまざまなタスクに費やした時間を追跡できるシンプルな時間管理システムです。また、GoogleカレンダーのAPIを使用して計画を設定することもできます。sqlite3を使用することで、さまざまなタスクに費やした時間のデータを保存できます。",
-        viewOnGithub: "GitHub",
-      },
+      viewOnGithub: "GitHub",
+      items: [
+        {
+          title: "文字起こし",
+          description:
+            "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/transcription",
+        },
+        {
+          title: "ファイル管理",
+          description:
+            "ダウンロードしたファイルを拡張子に基づいてフォルダに分割することができるシンプルなファイル管理システムです。",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/file-manage",
+        },
+        {
+          title: "時間管理",
+          description:
+            "さまざまなタスクに費やした時間を追跡できるシンプルな時間管理システムです。また、GoogleカレンダーのAPIを使用して計画を設定することもできます。sqlite3を使用することで、さまざまなタスクに費やした時間のデータを保存できます。",
+          github:
+            "https://github.com/soso0024/python-projects/tree/main/time-manage",
+        },
+      ],
     },
     skills: {
       title: "スキル",
@@ -454,7 +457,7 @@ export const translations: { [key: string]: Translation } = {
         {
           title: "コード生成AIのテストにおけるコサイン類似度の活用",
           description:
-            "自然言語処理とジェスチャー認識を通じて、人間とロボットの相互作用を改善する研究を行っています。",
+            "生成AIが出力したコードをユーザが使用する前に，コサイン類似度を用いて取得したテストケースを用いて性能を検証",
           period: "2024年10月 - 現在",
           github: "https://github.com/soso0024/pj-aidev-research-mockup",
         },
