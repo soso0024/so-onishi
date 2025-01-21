@@ -269,13 +269,15 @@ export const translations: { [key: string]: Translation } = {
           description:
             "Conducting research to improve human-robot interaction through natural language processing and gesture recognition.",
           period: "October 2024 - Present",
+          github: "https://github.com/soso0024/pj-aidev-research-mockup",
         },
         {
           title: "Mapping of Robotics Laboratory using Turtlebot3",
           description:
             "Implementing laboratory mapping using SLAM technology and Turtlebot3",
           period: "January 2024 - July 2024",
-          conference: "https://example.com/robotics-conference-2024",
+          github:
+            "https://github.com/RonaldoCD/2D-SLAM-SlamToolbox-TurtleBot3-ECN",
         },
         {
           title:
@@ -283,6 +285,9 @@ export const translations: { [key: string]: Translation } = {
           description:
             "Verifying if video encoding using spot instances can maintain performance while reducing costs across different regions",
           period: "May 2023 - March 2024",
+          github: "https://github.com/soso0024/python-video-encoding",
+          conference:
+            "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202302252571992899",
         },
       ],
     },
@@ -458,13 +463,17 @@ export const translations: { [key: string]: Translation } = {
           description:
             "SLAM 技術と Turtlebot3 を活用し、研究室のマッピングを実装",
           period: "2024年1月 - 2024年7月",
-          conference: "https://example.com/robotics-conference-2024",
+          github:
+            "https://github.com/RonaldoCD/2D-SLAM-SlamToolbox-TurtleBot3-ECN",
         },
         {
           title: "ビデオエンコードにおける Amazon EC2 の性能と費用対効果の評価",
           description:
             "スポットインスタンスを用いたビデオエンコードが、異なるリージョンでも性能を維持したまま費用削減を実現できるか検証",
           period: "2023年5月 - 2024年3月",
+          github: "https://github.com/soso0024/python-video-encoding",
+          conference:
+            "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=202302252571992899",
         },
       ],
     },
