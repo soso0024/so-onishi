@@ -304,7 +304,7 @@ export const translations: { [key: string]: Translation } = {
     about: {
       title: "自己紹介",
       passion:
-        "テクノロジーの力を使って周りをハッピーにすること，チームで協力して目標を達成することに魅力を感じます 🫶",
+        "テクノロジーの力を使って多くの人をハッピーにすること，チームで協力して目標を達成することに魅力を感じます 🫶",
       experience: {
         title: "経験",
         items: [
