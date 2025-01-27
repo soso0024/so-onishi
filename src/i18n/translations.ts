@@ -214,6 +214,23 @@ export const translations: { [key: string]: Translation } = {
           github:
             "https://github.com/soso0024/python-projects/tree/main/transcription",
         },
+        {
+          title: "Slack Reminder Creator",
+          description:
+            "A tool that allows you to easily create Slack reminders on a GUI",
+          github: "https://github.com/soso0024/slack-reminder-creator",
+        },
+        {
+          title: "Maze",
+          description: "Maze search using the A* algorithm",
+          github: "https://github.com/soso0024/cpp-assignment/tree/main/maze",
+        },
+        {
+          title: "Treasure Hunt",
+          description: "Treasure hunt game using the A* algorithm",
+          github:
+            "https://github.com/soso0024/cpp-assignment/tree/main/treasure_hunt",
+        },
       ],
     },
     skills: {
@@ -406,6 +423,22 @@ export const translations: { [key: string]: Translation } = {
             "フランス語のリスニング課題をサポートするための音声ファイル文字起こしサービス",
           github:
             "https://github.com/soso0024/python-projects/tree/main/transcription",
+        },
+        {
+          title: "Slackリマインダー作成",
+          description: "SlackリマインダーをGUI上で簡単に作成できるツール",
+          github: "https://github.com/soso0024/slack-reminder-creator",
+        },
+        {
+          title: "迷路",
+          description: "A*アルゴリズムを用いた迷路探索",
+          github: "https://github.com/soso0024/cpp-assignment/tree/main/maze",
+        },
+        {
+          title: "宝探し",
+          description: "A*アルゴリズムを用いた宝探しゲーム",
+          github:
+            "https://github.com/soso0024/cpp-assignment/tree/main/treasure_hunt",
         },
       ],
     },
