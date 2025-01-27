@@ -46,6 +46,7 @@ interface Translation {
       title: string;
       description: string;
       github: string;
+      project_url?: string;
     }[];
   };
   skills: {
@@ -219,6 +220,7 @@ export const translations: { [key: string]: Translation } = {
           description:
             "A tool that allows you to easily create Slack reminders on a GUI",
           github: "https://github.com/soso0024/slack-reminder-creator",
+          project_url: "https://slack-reminder-creator.vercel.app/",
         },
         {
           title: "Maze",
@@ -428,6 +430,7 @@ export const translations: { [key: string]: Translation } = {
           title: "Slackリマインダー作成",
           description: "SlackリマインダーをGUI上で簡単に作成できるツール",
           github: "https://github.com/soso0024/slack-reminder-creator",
+          project_url: "https://slack-reminder-creator.vercel.app/",
         },
         {
           title: "迷路",
