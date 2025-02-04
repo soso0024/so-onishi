@@ -115,8 +115,9 @@ export const translations: { [key: string]: Translation } = {
         items: [
           {
             role: "Infrastructure Engineer",
-            company: "Fast Retailing Co., Ltd. 👕",
-            period: "Mar 2025 - Apr 2025",
+            company:
+              "<a href='https://www.fastretailing.com/en/' target='_blank' style='color: brown;'>Fast Retailing Co., Ltd.</a> 👕",
+            period: "Mar 2025 ~ Apr 2025",
             description: `Maybe I will do:<br>
           - Examining challenges in the current network configuration and benefits of new technologies<br>
           - Identifying communication improvement points through interaction with IT departments in various countries<br>
@@ -125,29 +126,40 @@ export const translations: { [key: string]: Translation } = {
           - Designing Zero Trust architecture based on authentication, authorization, and device management technologies`,
           },
           {
+            role: "Backend Engineer",
+            company:
+              "<a href='https://corp.moneyforward.com/en/' target='_blank' style='color: brown;'>Money Forward, Inc.</a> 💰",
+            period: "Feb 2025 ~ Mar 2025",
+            description: "To be held at ERP Development Department",
+          },
+          {
             role: "Frontend Engineer",
-            company: "Yagish Inc. 🌿",
+            company:
+              "<a href='https://www.yagish.jp/' target='_blank' style='color: brown;'>Yagish Inc.</a> 🌿",
             period: "Oct 2024 ~ Nov 2024",
             description:
               "Implemented frontend features for a personal inquiry form in a resume automation service.<br>Work Product is <a href='https://rirekisho.yagish.jp/contact' target='_blank' style='color: green;'>Click Here !</a>",
           },
           {
             role: "Backend Engineer",
-            company: "Mynavi Corporation 💼",
+            company:
+              "<a href='https://www.mynavi.jp/eng/' target='_blank' style='color: brown;'>Mynavi Corporation</a> 💼",
             period: "Sep 2024",
             description:
               "Implemented bookmark functionality on the backend and developed an API to retrieve a list of articles bookmarked by users. - App Division 1st Place 🥇",
           },
           {
-            role: "Infrastructure Engineer",
-            company: "Chura Data Inc. 🌞",
+            role: "Engineer",
+            company:
+              "<a href='https://churadata.okinawa/' target='_blank' style='color: brown;'>Chura Data Inc.</a> 🌞",
             period: "Aug 2024",
             description:
               "During the internship, developed a search application utilizing RAG (Retrieval-Augmented Generation). Additionally, built infrastructure using AWS, Snowflake, Terraform, and dbt, and visualized data using Snowsight.",
           },
           {
             role: "Data Analyst",
-            company: "Simple Form Inc. 🏦",
+            company:
+              "<a href='https://www.simpleform.co.jp/' target='_blank' style='color: brown;'>Simple Form Inc.</a> 🏦",
             period: "Aug 2024",
             description:
               "During the internship, primarily conducted data analysis using Python. Discussed necessary elements for data analysis within the team and reported the results to the manager to share outputs. Through this experience, learned the importance of communication and coordination within the team.",
@@ -330,7 +342,8 @@ export const translations: { [key: string]: Translation } = {
         items: [
           {
             role: "インフラエンジニア",
-            company: "株式会社ファーストリテイリング 👕",
+            company:
+              "<a href='https://www.fastretailing.com/jp/' target='_blank' style='color: brown;'>株式会社ファーストリテイリング</a> 👕",
             period: "2025年3月 ~ 4月", // 開始時期のみなので「〜」を使う
             description: `主な職務内容（予定）は下記の通りです。<br>
         - 現状ネットワーク構成の課題や新技術導入のメリットを検討<br>
@@ -340,29 +353,40 @@ export const translations: { [key: string]: Translation } = {
         - 認証・認可・デバイス管理などの技術を基礎にゼロトラストアーキテクチャのデザイン`,
           },
           {
+            role: "バックエンドエンジニア",
+            company:
+              "<a href='https://corp.moneyforward.com/' target='_blank' style='color: brown;'>株式会社マネーフォワード</a> 💰",
+            period: "2025年2月 ~ 3月",
+            description: "ERP開発本部にて実施",
+          },
+          {
             role: "フロントエンドエンジニア",
-            company: "株式会社Yagish 🌿",
+            company:
+              "<a href='https://www.yagish.jp/' target='_blank' style='color: brown;'>株式会社Yagish</a> 🌿",
             period: "2024年10月 ~ 11月",
             description:
               "履歴書自動化サービスにおける，個人向けのお問い合わせフォームのフロントエンド機能の実装を行いました。<br>制作物は<a href='https://rirekisho.yagish.jp/contact' target='_blank' style='color: green;'>ここをクリック!</a>",
           },
           {
             role: "バックエンドエンジニア",
-            company: "マイナビ株式会社 💼",
+            company:
+              "<a href='https://www.mynavi.jp/' target='_blank' style='color: brown;'>マイナビ株式会社</a> 💼",
             period: "2024年9月",
             description:
               "バックエンドでのBookmark機能の実装と、ユーザーがBookmarkした記事の一覧を取得するAPIの開発を担当しました。 - アプリ部門1位 🥇",
           },
           {
-            role: "インフラエンジニア",
-            company: "ちゅらデータ株式会社 🌞",
+            role: "エンジニア",
+            company:
+              "<a href='https://churadata.okinawa/' target='_blank' style='color: brown;'>ちゅらデータ株式会社</a> 🌞",
             period: "2024年8月",
             description:
               "インターンシップでは、RAG（Retrieval-Augmented Generation）を活用して検索アプリケーションを開発しました。さらに、AWS、Snowflake、Terraform、dbtを使用してインフラを構築し、Snowsightを使ってデータの可視化を行いました。",
           },
           {
             role: "データ分析",
-            company: "シンプルフォーム株式会社 🏦",
+            company:
+              "<a href='https://www.simpleform.co.jp/' target='_blank' style='color: brown;'>シンプルフォーム株式会社</a> 🏦",
             period: "2024年8月",
             description:
               "インターンシップでは、主にPythonを用いたデータ分析を行いました。データ分析の過程で必要となる要素についてチーム内で議論し、その結果をManagerに報告することで、アウトプットを共有しました。この経験を通じて、チーム全体での意思疎通やコミュニケーションの重要性を学びました。",
