@@ -129,7 +129,7 @@ export const translations: { [key: string]: Translation } = {
             company: "Yagish Inc. 🌿",
             period: "Oct 2024 ~ Nov 2024",
             description:
-              "Implemented frontend features for a personal inquiry form in a resume automation service.",
+              "Implemented frontend features for a personal inquiry form in a resume automation service.<br>Work Product is <a href='https://rirekisho.yagish.jp/contact' target='_blank' style='color: green;'>Click Here !</a>",
           },
           {
             role: "Backend Engineer",
@@ -220,7 +220,8 @@ export const translations: { [key: string]: Translation } = {
           description:
             "A tool that allows you to easily create Slack reminders on a GUI",
           github: "https://github.com/soso0024/slack-reminder-creator",
-          project_url: "https://slack-reminder-creator.vercel.app/",
+          project_url:
+            "<a href='https://slack-reminder-creator.vercel.app/' target='_blank'>https://slack-reminder-creator.vercel.app/</a>",
         },
         {
           title: "Maze",
@@ -343,7 +344,7 @@ export const translations: { [key: string]: Translation } = {
             company: "株式会社Yagish 🌿",
             period: "2024年10月 ~ 11月",
             description:
-              "履歴書自動化サービスにおける，個人向けのお問い合わせフォームのフロントエンド機能の実装を行いました。",
+              "履歴書自動化サービスにおける，個人向けのお問い合わせフォームのフロントエンド機能の実装を行いました。<br>制作物は<a href='https://rirekisho.yagish.jp/contact' target='_blank' style='color: green;'>ここをクリック!</a>",
           },
           {
             role: "バックエンドエンジニア",
