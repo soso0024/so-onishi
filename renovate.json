@@ -12,7 +12,7 @@
       "automerge": true
     }
   ],
-  "schedule": ["before 5am on Monday"],
+  "schedule": ["at any time"],
   "timezone": "Asia/Tokyo",
   "prHourlyLimit": 2,
   "prConcurrentLimit": 10,
@@ -20,6 +20,6 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["before 5am on Monday"]
+    "schedule": ["at any time"]
   }
 }
