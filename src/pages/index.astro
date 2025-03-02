@@ -1,19 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SkillCard from '../components/SkillCard.astro';
+import { translations } from '../i18n/translations';
 
+// Get the language from the URL or default to English
+const lang = Astro.url.searchParams.get('lang') || 'en';
+const t = translations[lang];
 
-// SVG icons for the components
-const backendIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+// Icons
+const frontendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
 </svg>`;
 
-const toolsIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+const backendIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
 </svg>`;
 
-const cloudIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z" />
+const roboticsIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>`;
+
+const databaseIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+</svg>`;
+
+const cloudIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+</svg>`;
+
+const toolsIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
 </svg>`;
 
 const githubIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
@@ -26,18 +43,6 @@ const zennIcon = `<svg role="img" viewBox="0 0 24 24" class="w-6 h-6" fill="curr
 
 const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
   <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-</svg>`;
-
-const frontendIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
-</svg>`;
-
-const databaseIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-</svg>`;
-
-const roboticsIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
 </svg>`;
 ---
 
@@ -95,36 +100,48 @@ const roboticsIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBo
     <section id="skills" class="mb-16">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6" data-i18n="skills.title"></h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <SkillCard
-          title="Frontend"
-          skills={["HTML", "CSS", "JavaScript", "TypeScript", "Vue.js", "React"]}
-          icon={frontendIcon}
-        />
-        <SkillCard
-          title="Backend"
-          skills={["Python", "Django", "Flask"]}
-          icon={backendIcon}
-        />
-        <SkillCard
-          title="Robotics"
-          skills={["C", "C++", "ROS2"]}
-          icon={roboticsIcon}
-        />
-        <SkillCard
-          title="Database"
-          skills={["SQLite", "Supabase"]}
-          icon={databaseIcon}
-        />
-        <SkillCard
-          title="Cloud"
-          skills={["AWS", "GCP", "Terraform", "LocalStack"]}
-          icon={cloudIcon}
-        />
-        <SkillCard
-          title="Tools"
-          skills={["Git", "GitHub", "VS Code", "Cursor"]}
-          icon={toolsIcon}
-        />
+        <div data-skill-type="frontend">
+          <SkillCard
+            title={t.skills.frontend.title}
+            skills={t.skills.frontend.skills}
+            icon={frontendIcon}
+          />
+        </div>
+        <div data-skill-type="backend">
+          <SkillCard
+            title={t.skills.backend.title}
+            skills={t.skills.backend.skills}
+            icon={backendIcon}
+          />
+        </div>
+        <div data-skill-type="robotics">
+          <SkillCard
+            title={t.skills.robotics.title}
+            skills={t.skills.robotics.skills}
+            icon={roboticsIcon}
+          />
+        </div>
+        <div data-skill-type="database">
+          <SkillCard
+            title={t.skills.database.title}
+            skills={t.skills.database.skills}
+            icon={databaseIcon}
+          />
+        </div>
+        <div data-skill-type="cloud">
+          <SkillCard
+            title={t.skills.cloud.title}
+            skills={t.skills.cloud.skills}
+            icon={cloudIcon}
+          />
+        </div>
+        <div data-skill-type="tools">
+          <SkillCard
+            title={t.skills.tools.title}
+            skills={t.skills.tools.skills}
+            icon={toolsIcon}
+          />
+        </div>
       </div>
     </section>
 
@@ -270,6 +287,130 @@ const roboticsIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBo
       `).join('');
     }
 
+    function updateSkillsSection(lang: string) {
+      const skillsData = translations[lang].skills;
+      
+      // Update frontend skills
+      const frontendSkillCard = document.querySelector('[data-skill-type="frontend"]');
+      if (frontendSkillCard) {
+        const skillsList = frontendSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.frontend.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = frontendSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.frontend.title;
+        }
+      }
+      
+      // Update backend skills
+      const backendSkillCard = document.querySelector('[data-skill-type="backend"]');
+      if (backendSkillCard) {
+        const skillsList = backendSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.backend.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = backendSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.backend.title;
+        }
+      }
+      
+      // Update robotics skills
+      const roboticsSkillCard = document.querySelector('[data-skill-type="robotics"]');
+      if (roboticsSkillCard) {
+        const skillsList = roboticsSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.robotics.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = roboticsSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.robotics.title;
+        }
+      }
+      
+      // Update database skills
+      const databaseSkillCard = document.querySelector('[data-skill-type="database"]');
+      if (databaseSkillCard) {
+        const skillsList = databaseSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.database.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = databaseSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.database.title;
+        }
+      }
+      
+      // Update cloud skills
+      const cloudSkillCard = document.querySelector('[data-skill-type="cloud"]');
+      if (cloudSkillCard) {
+        const skillsList = cloudSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.cloud.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = cloudSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.cloud.title;
+        }
+      }
+      
+      // Update tools skills
+      const toolsSkillCard = document.querySelector('[data-skill-type="tools"]');
+      if (toolsSkillCard) {
+        const skillsList = toolsSkillCard.querySelector('ul');
+        if (skillsList) {
+          skillsList.innerHTML = skillsData.tools.skills.map(skill => `
+            <li class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              <span class="text-gray-700 dark:text-gray-300">${skill}</span>
+            </li>
+          `).join('');
+        }
+        const title = toolsSkillCard.querySelector('h3');
+        if (title) {
+          title.textContent = skillsData.tools.title;
+        }
+      }
+    }
+
     function updateContent(lang: string) {
       const elements = document.querySelectorAll('[data-i18n]');
       elements.forEach((element) => {
@@ -287,6 +428,7 @@ const roboticsIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBo
       updateResearchSection(lang);
       updateNewsSection(lang);
       updateProjectSection(lang);
+      updateSkillsSection(lang);
     }
 
     // Initialize with stored language or default to English

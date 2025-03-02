@@ -474,7 +474,7 @@ export const translations: { [key: string]: Translation } = {
       title: "スキル",
       backend: {
         title: "バックエンド",
-        skills: ["Python", "Django", "Flask"],
+        skills: ["Python", "Django", "Flask", "Ruby", "Ruby on Rails"],
       },
       frontend: {
         title: "フロントエンド",
