@@ -50,6 +50,10 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
     <!-- Hero Section -->
     <section class="text-center mb-16">
+      <div class="flex justify-center mb-6">
+        <img src="/images/heisenberg-icon.svg" alt="Heisenberg Icon" class="h-32 w-32 dark:hidden" />
+        <img src="/images/heisenberg-icon-dark.svg" alt="Heisenberg Icon" class="h-32 w-32 hidden dark:block" />
+      </div>
       <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4" data-i18n="hero.name"></h1>
       <div class="max-w-4xl mx-auto">
         <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="hero.description"></p>
@@ -375,8 +379,7 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
       if (cloudSkillCard) {
         const skillsList = cloudSkillCard.querySelector('ul');
         if (skillsList) {
-          skillsList.innerHTML = skillsData.cloud.skills.map(skill => `
-            <li class="flex items-center gap-2">
+          skillsList.innerHTML = skillsData.cloud.skills.map(skill => `            <li class="flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 dark:text-green-400" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
@@ -441,3 +444,4 @@ const linkedinIcon = `<svg viewBox="0 0 24 24" class="w-6 h-6" fill="currentColo
     }) as EventListener);
   </script>
 </Layout>
+
