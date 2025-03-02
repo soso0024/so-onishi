@@ -252,7 +252,7 @@ export const translations: { [key: string]: Translation } = {
       title: "Skills",
       backend: {
         title: "Backend",
-        skills: ["Python", "Django", "Flask"],
+        skills: ["Python", "Django", "Flask", "Ruby", "Ruby on Rails"],
       },
       frontend: {
         title: "Frontend",
@@ -268,7 +268,7 @@ export const translations: { [key: string]: Translation } = {
       },
       tools: {
         title: "Tools",
-        skills: ["Git", "GitHub", "VS Code", "Cursor"],
+        skills: ["GitHub", "VSCode", "Cursor", "Windsurf"],
       },
       cloud: {
         title: "Cloud",
