@@ -232,8 +232,7 @@ export const translations: { [key: string]: Translation } = {
           description:
             "A tool that allows you to easily create Slack reminders on a GUI",
           github: "https://github.com/soso0024/slack-reminder-creator",
-          project_url:
-            "<a href='https://slack-reminder-creator.vercel.app/' target='_blank'>https://slack-reminder-creator.vercel.app/</a>",
+          project_url: "https://slack-reminder-creator.vercel.app/",
         },
         {
           title: "Maze",
